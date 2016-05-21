@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KNBManagement.App" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAABIAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ApplicationStrings" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEB0CAAAABEJIAAAAChEAAgAWYAAAAgAgBATEAQQIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ErrorResources" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAACIAEAAAABEAAAAQAAAAAAEAAAAAAABIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.SecurityQuestions" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAACQIJEAAAAQAAAAAAIAQAIBAABIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.DataBindingExtensions" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Helpers\DataBindingExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.DataFieldExtensions" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DataFieldExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.NotOperatorValueConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\NotOperatorValueConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KNBManagement.ResourceWrapper" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAwAAAAEAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Helpers\ResourceWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.StringFormatValueConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\StringFormatValueConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KNBManagement.TargetNullValueConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\TargetNullValueConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KNBManagement.InBrowser" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAQAAAAAAAAAAAAAAAAAIAAAAAEAQAACAAAAA=</HashCode>
+      <FileName>InBrowser.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.MainPage" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.About" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\About.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ErrorWindow" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAgAAAAAAAAAAABAAAAAACAA=</HashCode>
+      <FileName>Views\ErrorWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Home" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Home.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Assets.Resources.SlipViewResources" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Controls.BusyIndicator" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABABgBABUAYAAAAAABABAQQIAAAACACAAAAAAACA=</HashCode>
+      <FileName>Controls\BusyIndicator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Controls.CustomComboBox" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAABgAAAAAAAA=</HashCode>
+      <FileName>Controls\CustomComboBox .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Controls.CustomDataForm" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Controls\CustomDataForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Controls.ModeViewer" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAgAAAAAAAAAABAACAAQg=</HashCode>
+      <FileName>Controls\ModeViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Controls.VisualStates" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAABAAAAAAEAAAAAAAAEAAAAAABAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\VisualStates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.LoginUI.LoginInfo" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAABCAAAABgAAAgAAAAACAAAASAQAAAAEgAAA=</HashCode>
+      <FileName>Models\LoginInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.LoginUI.LoginForm" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAAAAAAAAAAIAAAAAAgAAAAAAAAAGQIAAEAAA=</HashCode>
+      <FileName>Views\Login\LoginForm.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.LoginUI.LoginRegistrationWindow" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAgAAAQAAAAAAAAEIAAABIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Login\LoginRegistrationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.LoginUI.LoginStatus" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAIgAAAAAAAAAAABASAAAAAAAA=</HashCode>
+      <FileName>Views\Login\LoginStatus.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.LoginUI.RegistrationForm" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAIAAAAAAQAAAAAABIAAAEgAAAAAAAAAAQAIAAkAAA=</HashCode>
+      <FileName>Views\Login\RegistrationForm.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.RegistrationData" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAhAAAAAQgAAAEAgAAAAAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>Models\RegistrationDataExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.User" Collapsed="true">
+    <Position X="4.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.CommandManager" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Core\CommandManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAESAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>ViewModels\Core\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.DelegateCommand&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIAEACAAQAAESAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>ViewModels\Core\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.RelayPropertyObject" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Core\RelayPropertyObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.ViewModelBase">
+    <Position X="0.5" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAEIAAgEAQAECAAAABBAAAEAAQEAAAAAAAAgQAiA=</HashCode>
+      <FileName>ViewModels\Core\ViewModelBase.Command.tt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ViewModels.Core.ViewModelBase&lt;TDomainContext&gt;">
+    <Position X="3.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEJJAgGoBMATIABCwBQAgUAJQEAJACAAASkRSgI=</HashCode>
+      <FileName>ViewModels\Core\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KNBManagement.ViewModels.SlipViewModel">
+    <Position X="10.25" Y="8" Width="3" />
+    <TypeIdentifier>
+      <HashCode>sAgCRALAAQBBkQCCAAABAYCQCQCyQCoQAAEQDJgwZwA=</HashCode>
+      <FileName>ViewModels\SlipViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.ViewModels.SlipViewModelBase&lt;TDomainContext&gt;">
+    <Position X="6.75" Y="8" Width="3" />
+    <TypeIdentifier>
+      <HashCode>oAgUAABAAAAAFAAQAACBAIAQAAAAAAAAAQAAACAAIAA=</HashCode>
+      <FileName>ViewModels\SlipViewModelBase.Command.tt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Views.Install" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAQAAAAAAAAAAAAAQAAAIAAAAAEAQAACAAAAA=</HashCode>
+      <FileName>Views\Install.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Views.JournalInput" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAQAAEAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\JournalInput.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Views.Slip" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Slip.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.KNBManageDataResources" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAHAgkQEAgDwACKEhEAhEiQAAYGECACAAGhgACAKieQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.RegistrationDataResources" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAQACAAEAAgACAABEAAAAQCAAABAAAABAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.ValidationErrorResources" Collapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAAAAAAAAABEAkAEQAAgAAAAAIAAAAAAJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="KNBManagement.StackTracePolicy" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Views\ErrorWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>

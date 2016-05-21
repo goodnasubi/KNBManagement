@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KN_BManageModelStoreContainer" CdmEntityContainer="KN_BManageEntities">
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="IsTypeOf(KN_BManageModel.Company)">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="BusinessTypeID" ColumnName="BusinessTypeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyKey" ColumnName="CompanyKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(KN_BManageModel.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TS" ColumnName="TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journal">
+      <EntityTypeMapping TypeName="IsTypeOf(KN_BManageModel.Journal)">
+        <MappingFragment StoreEntitySet="Journal">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="JournalID" ColumnName="JournalID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="TradingDate" ColumnName="TradingDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TS" ColumnName="TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JournalDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(KN_BManageModel.JournalDetail)">
+        <MappingFragment StoreEntitySet="JournalDetail">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="JournalID" ColumnName="JournalID" />
+          <ScalarProperty Name="JournalDetailID" ColumnName="JounalDetailID" />
+          <ScalarProperty Name="DebitItemID" ColumnName="DebitItemID" />
+          <ScalarProperty Name="DebitMoney" ColumnName="DebitMoney" />
+          <ScalarProperty Name="CreditItemID" ColumnName="CreditItemID" />
+          <ScalarProperty Name="CreditMoney" ColumnName="CreditMoney" />
+          <ScalarProperty Name="TS" ColumnName="TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessTypes">
+      <EntityTypeMapping TypeName="KN_BManageModel.BusinessType">
+        <MappingFragment StoreEntitySet="BusinessTypes">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BusinessTypeID" ColumnName="BusinessTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlipTypes">
+      <EntityTypeMapping TypeName="KN_BManageModel.SlipType">
+        <MappingFragment StoreEntitySet="SlipTypes">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SlipTypeID" ColumnName="SlipTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slips">
+      <EntityTypeMapping TypeName="KN_BManageModel.Slip">
+        <MappingFragment StoreEntitySet="Slip">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="JournalItemID" ColumnName="JournalItemID" />
+          <ScalarProperty Name="SlipTypeID" ColumnName="SlipTypeID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TradingDate" ColumnName="TradingDate" />
+          <ScalarProperty Name="SlipID" ColumnName="SlipID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlipDetails">
+      <EntityTypeMapping TypeName="KN_BManageModel.SlipDetail">
+        <MappingFragment StoreEntitySet="SlipDetail">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="DetailOrder" ColumnName="DetailOrder" />
+          <ScalarProperty Name="JournalMoney" ColumnName="JournalMoney" />
+          <ScalarProperty Name="JournalItemID" ColumnName="JournalItemID" />
+          <ScalarProperty Name="SlipDetailID" ColumnName="SlipDetailID" />
+          <ScalarProperty Name="SlipID" ColumnName="SlipID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JournalItemBizs">
+      <EntityTypeMapping TypeName="KN_BManageModel.JournalItemBiz">
+        <MappingFragment StoreEntitySet="JournalItemBiz">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="JournalGroup" ColumnName="JournalGroup" />
+          <ScalarProperty Name="JournalName" ColumnName="JournalName" />
+          <ScalarProperty Name="JournalItemID" ColumnName="JournalItemID" />
+          <ScalarProperty Name="BusinessTypeID" ColumnName="BusinessTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JournalItemComps">
+      <EntityTypeMapping TypeName="KN_BManageModel.JournalItemComp">
+        <MappingFragment StoreEntitySet="JournalItemComp">
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="JournalGroup" ColumnName="JournalGroup" />
+          <ScalarProperty Name="JournalName" ColumnName="JournalName" />
+          <ScalarProperty Name="JournalItemID" ColumnName="JournalItemID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetJournalItems" FunctionName="KN_BManageModel.Store.GetJournalItems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KN_BManageModel.JournalItems">
+          <ScalarProperty Name="JournalItemID" ColumnName="JournalItemID" />
+          <ScalarProperty Name="JournalName" ColumnName="JournalName" />
+          <ScalarProperty Name="JournalGroup" ColumnName="JournalGroup" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

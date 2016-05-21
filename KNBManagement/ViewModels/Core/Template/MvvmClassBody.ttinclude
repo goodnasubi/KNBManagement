@@ -1,0 +1,35 @@
+﻿namespace <#= classinfo.NameSpaceName #>
+{
+	using KNBManagement.ViewModels.Core;
+	
+    public <# if (classinfo.IsAbstract){ #>abstract<# } #> partial class <#= classinfo.ClassName #>
+    {
+		
+<#  if (classinfo.Command != null) {
+        foreach(var command in classinfo.Command) {
+#>
+        #region <#= command.Name #> Command
+
+		private DelegateCommand _<#= command.Name #>Command;
+        public DelegateCommand <#= command.Name #>Command
+        {
+            get
+            {
+                return this._<#= command.Name #>Command = this._<#= command.Name #>Command ??
+					new DelegateCommand(this.Raise<#= command.Name #>Execute, this.Raise<#= command.Name #>CanExecute);
+            }
+        }
+        protected virtual void Raise<#= command.Name #>Execute()
+		{
+		}
+		protected virtual bool Raise<#= command.Name #>CanExecute()
+		{
+			return false;
+		}
+
+		#endregion
+
+<#      }
+    } #>
+    }
+}

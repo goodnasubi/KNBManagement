@@ -1,0 +1,15 @@
+<OutOfBrowserSettings ShortName="ＫＮ＆Ｂ経営管理・コンサル" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>ＫＮ＆Ｂ経営管理・コンサルティングアプリケーション</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="KNBManagement Application" Height="700" Width="900" Top="100" Left="100" WindowStartupLocation="Manual" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Assets/Icon/Slip16.png</Icon>
+    <Icon Size="32,32">Assets/Icon/Slip32.png</Icon>
+    <Icon Size="48,48">Assets/Icon/Slip48.png</Icon>
+    <Icon Size="128,128">Assets/Icon/Slip128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

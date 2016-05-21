@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KN_BManageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="KN_BManageEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="KN_BManageModel.Company" />
+    <EntitySet Name="Employees" EntityType="KN_BManageModel.Employee" />
+    <EntitySet Name="Journal" EntityType="KN_BManageModel.Journal" />
+    <EntitySet Name="JournalDetail" EntityType="KN_BManageModel.JournalDetail" />
+    <AssociationSet Name="CompanyJournal" Association="KN_BManageModel.CompanyJournal">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Journal" EntitySet="Journal" />
+    </AssociationSet>
+    <EntitySet Name="BusinessTypes" EntityType="KN_BManageModel.BusinessType" />
+    <EntitySet Name="SlipTypes" EntityType="KN_BManageModel.SlipType" />
+    <EntitySet Name="Slips" EntityType="KN_BManageModel.Slip" />
+    <EntitySet Name="SlipDetails" EntityType="KN_BManageModel.SlipDetail" />
+    <AssociationSet Name="CompanySlip" Association="KN_BManageModel.CompanySlip">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Slip" EntitySet="Slips" />
+    </AssociationSet>
+    <AssociationSet Name="SlipTypeSlip" Association="KN_BManageModel.SlipTypeSlip">
+      <End Role="SlipType" EntitySet="SlipTypes" />
+      <End Role="Slip" EntitySet="Slips" />
+    </AssociationSet>
+    <AssociationSet Name="SlipSlipDetail" Association="KN_BManageModel.SlipSlipDetail">
+      <End Role="Slip" EntitySet="Slips" />
+      <End Role="SlipDetail" EntitySet="SlipDetails" />
+    </AssociationSet>
+    <EntitySet Name="JournalItemBizs" EntityType="KN_BManageModel.JournalItemBiz" />
+    <EntitySet Name="JournalItemComps" EntityType="KN_BManageModel.JournalItemComp" />
+    <AssociationSet Name="FK_CompanyJounalItem1" Association="KN_BManageModel.FK_CompanyJounalItem1">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="JournalItemComp" EntitySet="JournalItemComps" />
+    </AssociationSet>
+    <AssociationSet Name="BusinessTypeJournalItemBiz" Association="KN_BManageModel.BusinessTypeJournalItemBiz">
+      <End Role="BusinessType" EntitySet="BusinessTypes" />
+      <End Role="JournalItemBiz" EntitySet="JournalItemBizs" />
+    </AssociationSet>
+    <AssociationSet Name="CompanyEmployee" Association="KN_BManageModel.CompanyEmployee">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="JournalJournalDetail" Association="KN_BManageModel.JournalJournalDetail">
+      <End Role="Journal" EntitySet="Journal" />
+      <End Role="JournalDetail" EntitySet="JournalDetail" />
+    </AssociationSet>
+    <AssociationSet Name="BusinessTypeCompany" Association="KN_BManageModel.BusinessTypeCompany">
+      <End Role="BusinessType" EntitySet="BusinessTypes" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="CompanyJournalDetail" Association="KN_BManageModel.CompanyJournalDetail">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="JournalDetail" EntitySet="JournalDetail" />
+    </AssociationSet>
+    <FunctionImport Name="GetJournalItems" ReturnType="Collection(KN_BManageModel.JournalItems)">
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Company">
+    <Documentation>
+      <Summary>会社マスタ</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Guid" Nullable="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyKey" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Journal" Relationship="KN_BManageModel.CompanyJournal" FromRole="Company" ToRole="Journal" />
+    <Property Type="Guid" Name="BusinessTypeID" Nullable="false" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Slips" Relationship="KN_BManageModel.CompanySlip" FromRole="Company" ToRole="Slip" />
+    <NavigationProperty Name="JournalItemComps" Relationship="KN_BManageModel.FK_CompanyJounalItem1" FromRole="Company" ToRole="JournalItemComp" />
+    <NavigationProperty Name="Employees" Relationship="KN_BManageModel.CompanyEmployee" FromRole="Company" ToRole="Employee" />
+    <NavigationProperty Name="BusinessType" Relationship="KN_BManageModel.BusinessTypeCompany" FromRole="Company" ToRole="BusinessType" />
+    <NavigationProperty Name="JournalDetails" Relationship="KN_BManageModel.CompanyJournalDetail" FromRole="Company" ToRole="JournalDetail" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Documentation>
+      <Summary>社員マスタ</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="CompanyID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LoginID" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TS" Type="Binary" Nullable="true" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Company" Relationship="KN_BManageModel.CompanyEmployee" FromRole="Employee" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Documentation>
+      <Summary>仕訳帳</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalID" />
+    </Key>
+    <Property Type="Guid" Name="CompanyID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="Guid" Name="JournalID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="EmployeeID" Nullable="false" />
+    <Property Type="DateTime" Name="TradingDate" Nullable="false">
+      <Documentation>
+        <Summary>取引日</Summary>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Remarks" Nullable="false">
+      <Documentation>
+        <Summary>摘要</Summary>
+      </Documentation>
+    </Property>
+    <Property Type="Binary" Name="TS" Nullable="true" FixedLength="true" MaxLength="8" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Company" Relationship="KN_BManageModel.CompanyJournal" FromRole="Journal" ToRole="Company" />
+    <NavigationProperty Name="JournalDetails" Relationship="KN_BManageModel.JournalJournalDetail" FromRole="Journal" ToRole="JournalDetail" />
+  </EntityType>
+  <EntityType Name="JournalDetail">
+    <Documentation>
+      <Summary>仕訳帳詳細</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="JournalDetailID" />
+    </Key>
+    <Property Type="Guid" Name="CompanyID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="Guid" Name="JournalID" Nullable="false" />
+    <Property Type="Int32" Name="JournalDetailID" Nullable="false" />
+    <Property Type="Guid" Name="DebitItemID" Nullable="false" />
+    <Property Type="Decimal" Name="DebitMoney" Nullable="false" />
+    <Property Type="Guid" Name="CreditItemID" Nullable="false" />
+    <Property Type="Decimal" Name="CreditMoney" Nullable="false" />
+    <Property Type="Binary" Name="TS" FixedLength="true" MaxLength="8" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" Nullable="true" />
+    <NavigationProperty Name="Journal" Relationship="KN_BManageModel.JournalJournalDetail" FromRole="JournalDetail" ToRole="Journal" />
+    <NavigationProperty Name="Company" Relationship="KN_BManageModel.CompanyJournalDetail" FromRole="JournalDetail" ToRole="Company" />
+  </EntityType>
+  <Association Name="CompanyJournal">
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KN_BManageModel.Journal" Role="Journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BusinessType">
+    <Key>
+      <PropertyRef Name="BusinessTypeID" />
+    </Key>
+    <Property Type="Guid" Name="BusinessTypeID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="JournalItemBizs" Relationship="KN_BManageModel.BusinessTypeJournalItemBiz" FromRole="BusinessType" ToRole="JournalItemBiz" />
+    <NavigationProperty Name="Companies" Relationship="KN_BManageModel.BusinessTypeCompany" FromRole="BusinessType" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="SlipType">
+    <Documentation>
+      <Summary>伝票タイプ</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="SlipTypeID" />
+    </Key>
+    <Property Type="Int32" Name="SlipTypeID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Slips" Relationship="KN_BManageModel.SlipTypeSlip" FromRole="SlipType" ToRole="Slip" />
+  </EntityType>
+  <EntityType Name="Slip">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SlipID" />
+    </Key>
+    <Property Type="Guid" Name="CompanyID" Nullable="false" />
+    <Property Type="Guid" Name="SlipID" Nullable="false" />
+    <Property Type="DateTime" Name="TradingDate" Nullable="false" />
+    <Property Type="String" Name="Remarks" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SlipTypeID" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="KN_BManageModel.CompanySlip" FromRole="Slip" ToRole="Company" />
+    <NavigationProperty Name="SlipType" Relationship="KN_BManageModel.SlipTypeSlip" FromRole="Slip" ToRole="SlipType" />
+    <NavigationProperty Name="SlipDetails" Relationship="KN_BManageModel.SlipSlipDetail" FromRole="Slip" ToRole="SlipDetail" />
+    <Property Type="Guid" Name="JournalItemID" Nullable="false" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SlipDetail">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SlipID" />
+      <PropertyRef Name="SlipDetailID" />
+    </Key>
+    <Property Type="Guid" Name="CompanyID" Nullable="false" />
+    <Property Type="Guid" Name="SlipID" Nullable="false" />
+    <Property Type="Guid" Name="SlipDetailID" Nullable="false" />
+    <NavigationProperty Name="Slip" Relationship="KN_BManageModel.SlipSlipDetail" FromRole="SlipDetail" ToRole="Slip" />
+    <Property Type="Guid" Name="JournalItemID" Nullable="false" />
+    <Property Type="Decimal" Name="JournalMoney" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="DetailOrder" Nullable="false" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="CompanySlip">
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KN_BManageModel.Slip" Role="Slip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Slip">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SlipTypeSlip">
+    <End Type="KN_BManageModel.SlipType" Role="SlipType" Multiplicity="1" />
+    <End Type="KN_BManageModel.Slip" Role="Slip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SlipType">
+        <PropertyRef Name="SlipTypeID" />
+      </Principal>
+      <Dependent Role="Slip">
+        <PropertyRef Name="SlipTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SlipSlipDetail">
+    <End Type="KN_BManageModel.Slip" Role="Slip" Multiplicity="1" />
+    <End Type="KN_BManageModel.SlipDetail" Role="SlipDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Slip">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="SlipID" />
+      </Principal>
+      <Dependent Role="SlipDetail">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="SlipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="JournalItemBiz">
+    <Key>
+      <PropertyRef Name="BusinessTypeID" />
+      <PropertyRef Name="JournalItemID" />
+    </Key>
+    <Property Type="Guid" Name="BusinessTypeID" Nullable="false" />
+    <NavigationProperty Name="BusinessType" Relationship="KN_BManageModel.BusinessTypeJournalItemBiz" FromRole="JournalItemBiz" ToRole="BusinessType" />
+    <Property Type="Guid" Name="JournalItemID" Nullable="false" />
+    <Property Type="String" Name="JournalName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JournalGroup" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Keyword" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="JournalItemComp">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalItemID" />
+    </Key>
+    <Property Type="Guid" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="KN_BManageModel.FK_CompanyJounalItem1" FromRole="JournalItemComp" ToRole="Company" />
+    <Property Type="Guid" Name="JournalItemID" Nullable="false" />
+    <Property Type="String" Name="JournalName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JournalGroup" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Keyword" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="TS" Nullable="true" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="FK_CompanyJounalItem1">
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KN_BManageModel.JournalItemComp" Role="JournalItemComp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="JournalItemComp">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BusinessTypeJournalItemBiz">
+    <End Type="KN_BManageModel.BusinessType" Role="BusinessType" Multiplicity="1" />
+    <End Type="KN_BManageModel.JournalItemBiz" Role="JournalItemBiz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessType">
+        <PropertyRef Name="BusinessTypeID" />
+      </Principal>
+      <Dependent Role="JournalItemBiz">
+        <PropertyRef Name="BusinessTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanyEmployee">
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KN_BManageModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JournalJournalDetail">
+    <End Type="KN_BManageModel.Journal" Role="Journal" Multiplicity="1" />
+    <End Type="KN_BManageModel.JournalDetail" Role="JournalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Journal">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="JournalID" />
+      </Principal>
+      <Dependent Role="JournalDetail">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="JournalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BusinessTypeCompany">
+    <End Type="KN_BManageModel.BusinessType" Role="BusinessType" Multiplicity="1" />
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessType">
+        <PropertyRef Name="BusinessTypeID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="BusinessTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanyJournalDetail">
+    <End Type="KN_BManageModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KN_BManageModel.JournalDetail" Role="JournalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="JournalDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="JournalItems">
+    <Property Type="Guid" Name="JournalItemID" Nullable="false" />
+    <Property Type="String" Name="JournalName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="JournalGroup" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

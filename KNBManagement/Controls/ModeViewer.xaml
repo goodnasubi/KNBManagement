@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="KNBManagement.Controls.ModeViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    
+    <Grid x:Name="LayoutRoot">
+        <sdk:Label Name="lblAdding" Visibility="Collapsed" HorizontalContentAlignment="Center" FontStretch="UltraExpanded" FontWeight="ExtraBold" Content="追加中" Foreground="#FFC72626" BorderBrush="#FFC72626" BorderThickness="4" RenderTransformOrigin="0.5,0.5" FontSize="20" >
+        	<sdk:Label.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        			<GradientStop Color="White" Offset="0"/>
+        			<GradientStop Color="White" Offset="1"/>
+        			<GradientStop Color="#FFE9BCBC" Offset="0.507"/>
+        		</LinearGradientBrush>
+        	</sdk:Label.Background>
+        	<sdk:Label.Effect>
+        		<DropShadowEffect Color="#FF6E3434"/>
+        	</sdk:Label.Effect>
+        </sdk:Label>
+        <sdk:Label Name="lblEditting" Visibility="Collapsed" HorizontalContentAlignment="Center" FontStretch="UltraExpanded" FontWeight="ExtraBold" Content="編集中" Foreground="#FFC72626" BorderBrush="#FFC72626" BorderThickness="4" RenderTransformOrigin="0.5,0.5" FontSize="20" >
+            <sdk:Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFE9BCBC" Offset="0.507"/>
+                </LinearGradientBrush>
+            </sdk:Label.Background>
+            <sdk:Label.Effect>
+                <DropShadowEffect Color="#FF6E3434"/>
+            </sdk:Label.Effect>
+        </sdk:Label>
+    </Grid>
+</UserControl>

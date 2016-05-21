@@ -1,0 +1,404 @@
+﻿<sdk:Page 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:vm="clr-namespace:KNBManagement.ViewModels"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+            xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+            xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices"
+            xmlns:local="clr-namespace:KNBManagement.Controls" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+            x:Class="KNBManagement.Views.Slip"
+           mc:Ignorable="d"
+           d:DesignWidth="1000" d:DesignHeight="700"
+           Title="Slip Page"
+            >
+
+    <sdk:Page.Resources>
+        <vm:SlipViewModel x:Name="slipViewModel"/>
+        <Style x:Key="ButtonStyleUp" TargetType="Button">
+        	<Setter Property="Background" Value="#FF1F3B53"/>
+        	<Setter Property="Foreground" Value="#FF000000"/>
+        	<Setter Property="Padding" Value="3"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="BorderBrush">
+        		<Setter.Value>
+        			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        				<GradientStop Color="#FFA3AEB9" Offset="0"/>
+        				<GradientStop Color="#FF8399A9" Offset="0.375"/>
+        				<GradientStop Color="#FF718597" Offset="0.375"/>
+        				<GradientStop Color="#FF617584" Offset="1"/>
+        			</LinearGradientBrush>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid x:Name="grid">
+        					<Grid.Resources>
+        						<Storyboard x:Name="Storyboard1">
+        							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="blockArrow">
+        								<EasingDoubleKeyFrame KeyTime="0" Value="0.835"/>
+        								<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-3.674"/>
+        							</DoubleAnimationUsingKeyFrames>
+        						</Storyboard>
+        					</Grid.Resources>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal">
+        								<Storyboard/>
+        							</VisualState>
+        							<VisualState x:Name="MouseOver">
+        								<Storyboard AutoReverse="True" RepeatBehavior="Forever">
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-3.841"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard AutoReverse="True" RepeatBehavior="Forever">
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
+        							<VisualState x:Name="Focused"/>
+        							<VisualState x:Name="Unfocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<ed:BlockArrow x:Name="blockArrow" Orientation="Up" UseLayoutRounding="False" Width="30" Height="30" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource BodySelectedColorBrush3}" Fill="{StaticResource BodyButtonBackColorBrush}">
+        						<ed:BlockArrow.Projection>
+        							<PlaneProjection/>
+        						</ed:BlockArrow.Projection>
+        						<ed:BlockArrow.RenderTransform>
+        							<CompositeTransform/>
+        						</ed:BlockArrow.RenderTransform>
+        					</ed:BlockArrow>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="ButtonStyleDown" TargetType="Button">
+        	<Setter Property="Background" Value="#FF1F3B53"/>
+        	<Setter Property="Foreground" Value="#FF000000"/>
+        	<Setter Property="Padding" Value="3"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="BorderBrush">
+        		<Setter.Value>
+        			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        				<GradientStop Color="#FFA3AEB9" Offset="0"/>
+        				<GradientStop Color="#FF8399A9" Offset="0.375"/>
+        				<GradientStop Color="#FF718597" Offset="0.375"/>
+        				<GradientStop Color="#FF617584" Offset="1"/>
+        			</LinearGradientBrush>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="MouseOver">
+        								<Storyboard>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.175"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="blockArrow">
+        										<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        										<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.3"/>
+        									</DoubleAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
+        							<VisualState x:Name="Focused"/>
+        							<VisualState x:Name="Unfocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<ed:BlockArrow x:Name="blockArrow" Orientation="Down" Stroke="{StaticResource BodySelectedColorBrush2}" StrokeThickness="1" UseLayoutRounding="False" Width="30" Height="30" RenderTransformOrigin="0.5,0.5" Fill="{StaticResource BodyButtonBackColorBrush}">
+        						<ed:BlockArrow.RenderTransform>
+        							<CompositeTransform/>
+        						</ed:BlockArrow.RenderTransform>
+        					</ed:BlockArrow>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+    </sdk:Page.Resources>
+
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource slipViewModel}">
+        <local:BusyIndicator x:Name="busyIndicator" BusyContent="{Binding ApplicationStrings.BusyIndicatorCommunication, Source={StaticResource ResourceWrapper}}"
+                             IsBusy="{Binding IsLoading}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="260" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="89" />
+                    <RowDefinition Height="533*" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="53" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <TextBlock Height="21" x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" Text="{Binding ApplicationStrings.SlipPageTitle, Source={StaticResource ResourceWrapper}}" VerticalAlignment="Top" Width="67" Grid.Column="1" Margin="0,12,0,0" />
+                <Border BorderBrush="Silver" BorderThickness="1" Grid.Column="2" x:Name="border1" CornerRadius="20" Grid.Row="1">
+                    <Border.Background>
+                        <ImageBrush ImageSource="texture_paper_b0.png" Stretch="UniformToFill"/>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <Grid Height="Auto" x:Name="grid1" Width="Auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="34" />
+                            <RowDefinition Height="153" />
+                            <RowDefinition Height="247*" />
+                            <RowDefinition Height="53" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Grid DataContext="{Binding Slip}" Grid.Column="1" x:Name="grid3" VerticalAlignment="Stretch" Grid.Row="2" Margin="6,0,6,6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="255*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="34*" />
+                            </Grid.RowDefinitions>
+                            <sdk:Label Content="取引日:" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" FontSize="12" />
+                            <sdk:DatePicker Grid.Column="1" Height="23" Margin="3" x:Name="tradingDateDatePicker" SelectedDate="{Binding TradingDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left" IsEnabled="{Binding DataContext.IsNoReadOnly, ElementName=LayoutRoot}" />
+                            <sdk:Label Content="仕訳項目:" Grid.Row="1" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" FontSize="12" />
+                            <local:CustomComboBox SelectedValuePath="JournalItemID" SelectedValue="{Binding JournalItemID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" DisplayMemberPath="JournalName" ItemsSource="{Binding DataContext.JournalItemBizs, ElementName=LayoutRoot}" Grid.Column="1" Grid.Row="1" Height="24" Margin="3" x:Name="journalItemIDComboBox" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left" IsEnabled="{Binding DataContext.IsNoReadOnly, ElementName=LayoutRoot}">
+                                <local:CustomComboBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel />
+                                    </ItemsPanelTemplate>
+                                </local:CustomComboBox.ItemsPanel>
+                            </local:CustomComboBox>
+                            <sdk:Label Content="摘要:" Grid.Row="2" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" FontSize="12" />
+                            <TextBox IsReadOnly="{Binding DataContext.IsReadOnly, ElementName=LayoutRoot}" Grid.Column="1" Grid.Row="2" Height="48" Margin="3" x:Name="remarksTextBox" Text="{Binding Remarks, Mode=TwoWay, NotifyOnValidationError=true, TargetNullValue='', ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left" TextWrapping="Wrap" />
+                        </Grid>
+                        <Grid Grid.Column="1" HorizontalAlignment="Stretch" Margin="6,6,6,0" x:Name="grid4" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:ModeViewer IsAdding="{Binding IsAdd}" IsEditting="{Binding IsEdit}" x:Name="modeViewer1" Width="100" HorizontalAlignment="Left" />
+                            <local:CustomComboBox IsEnabled="{Binding IsNoReadOnly}" SelectedValuePath="SlipTypeID" SelectedValue="{Binding SlipTypeID, Mode=TwoWay}" DisplayMemberPath="Name" ItemsSource="{Binding SlipTypes, Mode=OneWay}" Grid.Column="1" Margin="0" x:Name="cmbSlipType" VerticalAlignment="Top" FontSize="24" FontWeight="ExtraBold" Opacity="1" />
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="4" x:Name="grid5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="240" />
+                                <ColumnDefinition Width="240" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Content="仕訳項目を追加" x:Name="btnAddRecord" Command="{Binding AddSlipDetailRecordCommand}"  FontSize="14" FontWeight="Bold" Margin="10" />
+                            <Button Content="選択されている仕訳項目を削除" Command="{Binding DelSlipDetailRecordCommand}"  Grid.Column="1" x:Name="btnDelRecord" FontSize="14" FontWeight="Bold" Margin="10" />
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="3" x:Name="grid7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <sdk:DataGrid SelectedItem="{Binding SlipDetail, Mode=TwoWay}" ItemsSource="{Binding SlipDetails}" AutoGenerateColumns="False" x:Name="slipDetailDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" IsEnabled="True" IsReadOnly="{Binding DataContext.IsReadOnly, ElementName=LayoutRoot}" VerticalContentAlignment="Stretch" SelectionMode="Single">
+                                <sdk:DataGrid.Columns>
+                                    <sdk:DataGridTemplateColumn x:Name="journalItemIDColumn" Header="仕訳詳細" Width="300">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <local:CustomComboBox IsEnabled="{Binding IsNoReadOnly, Source={StaticResource slipViewModel}}" SelectedValuePath="JournalItemID" SelectedValue="{Binding JournalItemID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" DisplayMemberPath="JournalName" ItemsSource="{Binding JournalItemBizs, Source={StaticResource slipViewModel}}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+                                    <sdk:DataGridTextColumn x:Name="journalMoneyColumn" Binding="{Binding JournalMoney}" Header="金額" Width="140">
+                                        <sdk:DataGridTextColumn.ElementStyle>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="TextWrapping" Value="Wrap" />
+                                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                            </Style>
+                                        </sdk:DataGridTextColumn.ElementStyle>
+                                        <sdk:DataGridTextColumn.EditingElementStyle>
+                                            <Style TargetType="TextBox">
+                                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                            </Style>
+                                        </sdk:DataGridTextColumn.EditingElementStyle>
+                                    </sdk:DataGridTextColumn>
+                                </sdk:DataGrid.Columns>
+                            </sdk:DataGrid>
+                            <Grid Grid.Column="1" x:Name="grid8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Button Command="{Binding Path=UpSlipDetailRecordCommand}"  Margin="4" x:Name="btnSlupDetailUp" Grid.Row="1" Style="{StaticResource ButtonStyleUp}">
+                                	<ed:BlockArrow Orientation="Up" Stroke="Black" UseLayoutRounding="False" Width="20" Height="20" Fill="{StaticResource BodyButtonBackColorBrush}">
+                                		<ed:BlockArrow.Effect>
+                                			<DropShadowEffect ShadowDepth="3"/>
+                                		</ed:BlockArrow.Effect>
+                                	</ed:BlockArrow>
+                                </Button>
+                                <Button Command="{Binding Path=DownSlipDetailRecordCommand}"  Grid.Row="2" x:Name="btnSlupDetailDown" Margin="4" Background="{x:Null}" Style="{StaticResource ButtonStyleDown}" >
+                                	<ed:BlockArrow Height="20" Orientation="Down" Stroke="Black" UseLayoutRounding="False" Width="20" Fill="{StaticResource BodyButtonBackColorBrush}">
+                                		<ed:BlockArrow.Effect>
+                                			<DropShadowEffect ShadowDepth="3"/>
+                                		</ed:BlockArrow.Effect>
+                                	</ed:BlockArrow>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Grid Grid.Column="1" x:Name="grid2" Height="60" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="800" Margin="100,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="30*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomComboBox IsEnabled="{Binding IsReadOnly}" DisplayMemberPath="CompanyName" SelectedItem="{Binding Company, Mode=TwoWay}" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" x:Name="cmbCompanies" Width="200" Grid.Row="1" FontSize="14" />
+                    <local:CustomComboBox IsEnabled="{Binding IsReadOnly}" DisplayMemberPath="EmployeeName" SelectedItem="{Binding Employee, Mode=TwoWay}" ItemsSource="{Binding Employees}" Grid.Column="1" HorizontalAlignment="Left" x:Name="cmbEmployees" Width="200" Grid.ColumnSpan="2" Margin="1,0,0,0" Grid.Row="1" FontSize="14" />
+                    <sdk:Label x:Name="label1" Content="会社情報：" FontSize="14" Margin="0,0,1,0" />
+                    <sdk:Label Content="社員情報：" FontSize="14" Margin="0,2,0,0" x:Name="label2" Grid.Column="1" />
+                    <sdk:Label Content="業種：" FontSize="14" Margin="0,2,0,0" x:Name="label3" Grid.Column="2" />
+                    <sdk:Label Content="{Binding BusinessType.Name}" Grid.Column="2" HorizontalAlignment="Left" x:Name="lblBusinessType" Width="193" FontSize="14" Margin="7,0,0,0" Grid.Row="1" />
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="3" x:Name="grid6" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="130" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="追加" Grid.Column="1" Margin="10" x:Name="btnAdd" Command="{Binding AddCommand}" FontSize="14" FontWeight="Bold" Background="{StaticResource BodyButtonBackColorBrush}" />
+                    <Button Content="登録" Grid.Column="2" Margin="10" x:Name="btnReg" Command="{Binding RegCommand}" FontSize="14" FontWeight="Bold" Background="{StaticResource BodyButtonBackColorBrush}" />
+                    <Button Content="編集" Grid.Column="3" Margin="10" x:Name="btnEdit" Command="{Binding EditCommand}" FontSize="14" FontWeight="Bold" Background="{StaticResource BodyButtonBackColorBrush}" />
+                    <Button Content="更新" Grid.Column="4" Margin="10" x:Name="btnUpd" Command="{Binding UpdateCommand}" FontSize="14" FontWeight="Bold" Background="{StaticResource BodyButtonBackColorBrush}" />
+                    <Button Content="キャンセル" Grid.Column="5" Margin="10" x:Name="btnCancel" Command="{Binding CancelCommand}" FontSize="14" FontWeight="Bold" Background="{StaticResource BodyButtonBackColorBrush}" />
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1" Name="grid9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="186" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <sdk:Label Name="label4" Content="伝票記入日" UseLayoutRounding="False" Padding="6" FontSize="12" BorderThickness="1,1,0,0" >
+                    	<sdk:Label.BorderBrush>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<LinearGradientBrush.RelativeTransform>
+                    				<CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-40"/>
+                    			</LinearGradientBrush.RelativeTransform>
+                    			<GradientStop Color="#FFE5B42C" Offset="0"/>
+                    			<GradientStop Color="White" Offset="1"/>
+                    			<GradientStop Color="#FFF3DDA1" Offset="0.322"/>
+                    			<GradientStop Color="#FFFBF4E1" Offset="0.608"/>
+                    		</LinearGradientBrush>
+                    	</sdk:Label.BorderBrush>
+                    </sdk:Label>
+                    <sdk:Label Grid.Row="2" Name="label5" Content="伝票一覧" Padding="6" FontSize="12" BorderThickness="1,1,0,0" >
+                    	<sdk:Label.BorderBrush>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<LinearGradientBrush.RelativeTransform>
+                    				<CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-40"/>
+                    			</LinearGradientBrush.RelativeTransform>
+                    			<GradientStop Color="#FFE5B42C" Offset="0"/>
+                    			<GradientStop Color="White" Offset="1"/>
+                    			<GradientStop Color="#FFF3DDA1" Offset="0.322"/>
+                    			<GradientStop Color="#FFFBF4E1" Offset="0.608"/>
+                    		</LinearGradientBrush>
+                    	</sdk:Label.BorderBrush>
+                    </sdk:Label>
+                    <sdk:Calendar IsEnabled="{Binding IsReadOnly}" SelectedDate="{Binding SlipTradingDate, Mode=TwoWay}" x:Name="calSlipTradingDate" Margin="6" Grid.Row="1">
+                        <sdk:Calendar.Effect>
+                            <DropShadowEffect />
+                        </sdk:Calendar.Effect>
+                    </sdk:Calendar>
+                    <sdk:DataGrid IsEnabled="{Binding IsReadOnly}" SelectedItem="{Binding Slip, Mode=TwoWay}" ItemsSource="{Binding Slips}" AutoGenerateColumns="False" Grid.Row="3" Margin="6" x:Name="slipDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" HorizontalContentAlignment="Stretch" AlternatingRowBackground="#FFC5F2FB" AreRowDetailsFrozen="False" SelectionMode="Single">
+                        <sdk:DataGrid.CellStyle>
+                            <Style TargetType="sdk:DataGridCell" />
+                        </sdk:DataGrid.CellStyle>
+                        <sdk:DataGrid.Effect>
+                            <DropShadowEffect />
+                        </sdk:DataGrid.Effect>
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTemplateColumn x:Name="tradingDateColumn" Header="取引日" Width="auto">
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding TradingDate, StringFormat=\{0: yyyy/MM/dd \}}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>
+                            <sdk:DataGridTextColumn x:Name="remarksColumn" Binding="{Binding Remarks}" Header="摘要" Width="*" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </Grid>
+        </local:BusyIndicator>
+    </Grid>
+</sdk:Page>

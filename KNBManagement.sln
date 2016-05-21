@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNBManagement", "KNBManagement\KNBManagement.csproj", "{CC0B467E-EF43-44B6-9AEF-6C58B108BEBC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6225A46D-D102-4992-B144-ECB034E2F977} = {6225A46D-D102-4992-B144-ECB034E2F977}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNBManagement.Web", "KNBManagement.Web\KNBManagement.Web.csproj", "{6225A46D-D102-4992-B144-ECB034E2F977}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{815CCF87-05B3-4C75-A36A-58FECB11FC76}"
+	ProjectSection(SolutionItems) = preProject
+		Database\KN_BManage.bat = Database\KN_BManage.bat
+		Database\KN_BManage.sql = Database\KN_BManage.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC0B467E-EF43-44B6-9AEF-6C58B108BEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0B467E-EF43-44B6-9AEF-6C58B108BEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0B467E-EF43-44B6-9AEF-6C58B108BEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0B467E-EF43-44B6-9AEF-6C58B108BEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6225A46D-D102-4992-B144-ECB034E2F977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6225A46D-D102-4992-B144-ECB034E2F977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6225A46D-D102-4992-B144-ECB034E2F977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6225A46D-D102-4992-B144-ECB034E2F977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

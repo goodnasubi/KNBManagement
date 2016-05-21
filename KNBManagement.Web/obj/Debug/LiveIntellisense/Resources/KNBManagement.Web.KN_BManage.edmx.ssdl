@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KN_BManageModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="KN_BManageModelStoreContainer">
+    <EntitySet Name="BusinessTypes" EntityType="KN_BManageModel.Store.BusinessTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companies" EntityType="KN_BManageModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="KN_BManageModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Journal" EntityType="KN_BManageModel.Store.Journal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JournalDetail" EntityType="KN_BManageModel.Store.JournalDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JournalItemBiz" EntityType="KN_BManageModel.Store.JournalItemBiz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JournalItemComp" EntityType="KN_BManageModel.Store.JournalItemComp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Slip" EntityType="KN_BManageModel.Store.Slip" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SlipDetail" EntityType="KN_BManageModel.Store.SlipDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SlipTypes" EntityType="KN_BManageModel.Store.SlipTypes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CompanyEmployee" Association="KN_BManageModel.Store.FK_CompanyEmployee">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyJournal" Association="KN_BManageModel.Store.FK_CompanyJournal">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Journal" EntitySet="Journal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyJournalDetail" Association="KN_BManageModel.Store.FK_CompanyJournalDetail">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="JournalDetail" EntitySet="JournalDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JournalJournalDetail" Association="KN_BManageModel.Store.FK_JournalJournalDetail">
+      <End Role="Journal" EntitySet="Journal" />
+      <End Role="JournalDetail" EntitySet="JournalDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BusinessTypes">
+    <Key>
+      <PropertyRef Name="BusinessTypeID" />
+    </Key>
+    <Property Name="BusinessTypeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyKey" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BusinessTypeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LoginID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TradingDate" Type="datetime" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="JournalDetail">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="JounalDetailID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JounalDetailID" Type="int" Nullable="false" />
+    <Property Name="DebitItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DebitMoney" Type="decimal" Nullable="false" />
+    <Property Name="CreditItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreditMoney" Type="decimal" Nullable="false" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="JournalItemBiz">
+    <Key>
+      <PropertyRef Name="BusinessTypeID" />
+      <PropertyRef Name="JournalItemID" />
+    </Key>
+    <Property Name="BusinessTypeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JournalGroup" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Keyword" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="JournalItemComp">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="JournalItemID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JournalGroup" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Keyword" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Slip">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SlipID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SlipID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TradingDate" Type="datetime" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SlipTypeID" Type="int" Nullable="false" />
+    <Property Name="JournalItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SlipDetail">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SlipID" />
+      <PropertyRef Name="SlipDetailID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SlipID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SlipDetailID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JournalMoney" Type="decimal" Nullable="false" />
+    <Property Name="DetailOrder" Type="int" Nullable="false" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SlipTypes">
+    <Key>
+      <PropertyRef Name="SlipTypeID" />
+    </Key>
+    <Property Name="SlipTypeID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TS" Type="timestamp" Nullable="true" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="FK_CompanyEmployee">
+    <End Role="Companies" Type="KN_BManageModel.Store.Companies" Multiplicity="1" />
+    <End Role="Employees" Type="KN_BManageModel.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyJournal">
+    <End Role="Companies" Type="KN_BManageModel.Store.Companies" Multiplicity="1" />
+    <End Role="Journal" Type="KN_BManageModel.Store.Journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyJournalDetail">
+    <End Role="Companies" Type="KN_BManageModel.Store.Companies" Multiplicity="1" />
+    <End Role="JournalDetail" Type="KN_BManageModel.Store.JournalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="JournalDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JournalJournalDetail">
+    <End Role="Journal" Type="KN_BManageModel.Store.Journal" Multiplicity="1" />
+    <End Role="JournalDetail" Type="KN_BManageModel.Store.JournalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Journal">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="JournalID" />
+      </Principal>
+      <Dependent Role="JournalDetail">
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="JournalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetJournalItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+</Schema>

@@ -1,0 +1,42 @@
+﻿<#+
+    class MvvmClassInfo
+    {
+        public string NameSpaceName;
+		public bool IsAbstract = false;
+		public bool IsVirtual = false;
+        public string ClassName;
+        public MvvmPropertyInfo[] Property;
+        public MvvmCommandInfo[] Command;
+        public MvvmClassInfo(string nameSpaceName, string className, MvvmPropertyInfo[] property, MvvmCommandInfo[] command)
+        {
+            NameSpaceName = nameSpaceName;
+            ClassName = className;
+            Property = property;
+            Command = command;
+        }
+    }
+    class MvvmPropertyInfo
+    {
+        public string Attribute;
+        public string PrivateName;
+        public string PublicName;
+        public Type Type;
+        public MvvmPropertyInfo(string privateName, string publicName, Type type, string attribute)
+        {
+            PrivateName = privateName;
+            PublicName = publicName;
+            Type = type;
+            Attribute = attribute;
+        }
+    }
+    class MvvmCommandInfo
+    {
+        public string Name;
+        public Type Type;
+        public MvvmCommandInfo(string name, Type type)
+        {
+            Name = name;
+            Type = type;
+        }
+    }
+#>

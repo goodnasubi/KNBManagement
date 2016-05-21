@@ -1,0 +1,21 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".tt.cs" #>
+<#@ include file="Template/MvvmClassInfo.ttinclude" #>
+<# 
+var classinfo = new MvvmClassInfo(
+    "KNBManagement.ViewModels.Core",
+	"ViewModelBase",
+    new MvvmPropertyInfo[] {
+    },
+    new MvvmCommandInfo[] {
+        new MvvmCommandInfo("Add", null),
+        new MvvmCommandInfo("Reg", null),
+        new MvvmCommandInfo("Edit", null),
+        new MvvmCommandInfo("Update", null),
+        new MvvmCommandInfo("Cancel", null)
+})
+{
+	IsAbstract = true
+};
+#>
+<#@ include file="Template/MvvmClassBody.ttinclude" #>

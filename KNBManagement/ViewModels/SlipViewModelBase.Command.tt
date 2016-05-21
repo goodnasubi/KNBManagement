@@ -1,0 +1,20 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".tt.cs" #>
+<#@ include file="Core/Template/MvvmClassInfo.ttinclude" #>
+<# 
+var classinfo = new MvvmClassInfo(
+    "KNBManagement.ViewModels",
+	"SlipViewModelBase<TDomainContext> : ViewModelBase<TDomainContext> where TDomainContext : global::System.ServiceModel.DomainServices.Client.DomainContext, new()",
+    new MvvmPropertyInfo[] {
+    },
+    new MvvmCommandInfo[] {
+        new MvvmCommandInfo("AddSlipDetailRecord", null),
+        new MvvmCommandInfo("DelSlipDetailRecord", null),
+		new MvvmCommandInfo("UpSlipDetailRecord", null),
+		new MvvmCommandInfo("DownSlipDetailRecord", null)
+})
+{
+	IsAbstract = true
+};
+#>
+<#@ include file="Core/Template/MvvmClassBody.ttinclude" #>

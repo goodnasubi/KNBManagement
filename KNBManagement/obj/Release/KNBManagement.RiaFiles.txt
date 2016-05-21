@@ -1,0 +1,4 @@
+C:\Users\ikeda\Documents\Visual Studio 2010\Projects\KNBManagement\KNBManagement
+Generated_Code\Services\Slip.Shared.cs
+Generated_Code\Services\SlipDetail.Shared.cs
+Generated_Code\Models\Shared\User.shared.cs

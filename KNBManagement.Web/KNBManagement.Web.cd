@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KNBManagement.Web.KN_BManageEntities" Collapsed="true">
+    <Position X="10.25" Y="6.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>ACAEAACAAAAAQIAAIACJgYCICAGuAAIQAGAQAAAMBAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.BusinessType" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIQggAAAAAAAAAAAIgQEAAAiQAAAAAgAAAAAAoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Company" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQIQAwAIIAKAAAAABA4AFSAIgAAAIAAwEAAAEIsA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Employee" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIIAIACAAIAAFCACAAFAoARQAEBAAACAAAABAABCog=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Journal" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAIAAwIIIAiAACAAEA4ABQYAAAAAAAEAABAYBAog=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.JournalDetail" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAYEAcAYAAIEAgQAIAAEA4QBQICgIABBAEAABAkBAoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.JournalItemBiz" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCgQAIQAwACAACACAAAAAkAGAQAMAQAABBgAACAAIoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.JournalItemComp" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DCgRAIAAAAKAAAACAAAAAsADQQAMAQAABBAABCAAAoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Slip" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAABIAEwIKIACAAAAAAAoABQQCMgAIAAGBCBAYIRoE=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.SlipDetail" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAADIAFAQKAAgQAAAEQAoANQQAMAAIAACCJAAAoDoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.SlipType" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAIAAAAAAAAIwQAAAAAQAIAAABAAAAEQoA=</HashCode>
+      <FileName>Services\KN_BManageService.metadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.JournalItems" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCgQAIAAAACAEAACAAAAAEACAQAMAQAABBAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.RegistrationData" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAQAQAgAAAAA=</HashCode>
+      <FileName>Models\RegistrationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.User" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\Shared\User.shared.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.AuthenticationService" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\AuthenticationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.UserRegistrationService" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAQAAAAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\UserRegistrationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.KNBManageDataResources" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAHAgkQEAgDwACKEhEAhEiQAAYGECACAAGhgACAKieQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.RegistrationDataResources" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAQACAAEAAgACAABEAAAAQCAAABAAAABAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.SlipViewResources" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Resources.ValidationErrorResources" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAAAAAAAAABEAkAEQAAgAAAAAIAAAAAAJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Services.Core.ListQuery&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Core\ListQuery.cs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Services.Core.ListQueryProvider&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Core\ListQuery.cs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Services.Core.Query&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAQAAAAAAhAEAAAAAAAAABAAAAAEAAAAAAAAgAA=</HashCode>
+      <FileName>Services\Core\Query.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KNBManagement.Web.Services.Core.QueryProvider" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAQQAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Core\Query.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KNBManagement.Web.Services.Core.TypeSystem" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAAA=</HashCode>
+      <FileName>Services\Core\Query.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNBManagement.Web.Services.KN_BManageService">
+    <Position X="6" Y="6.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>IGgMUAAgCEICgiEZAgSQQACEQAASAQkIQACCAUEgAIo=</HashCode>
+      <FileName>Services\KN_BManageService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="KNBManagement.Web.CreateUserStatus" Collapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAQAGAAAAAAAAoAAAACAAAAAIAAAAAA=</HashCode>
+      <FileName>Services\UserRegistrationService.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>
